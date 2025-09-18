@@ -130,11 +130,45 @@ document.addEventListener('DOMContentLoaded', function() {
             slidesPerView: 4,
             freeMode: true,
             watchSlidesProgress: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            on: {
+              autoplayTimeLeft(s, time, progress) {
+                document.querySelectorAll('.progress-bar').forEach(el => {
+                  el.style.width = "0%";
+                });
+
+                let activeSlide = s.el.querySelector('.swiper-slide-thumb-active');
+                if (activeSlide) {
+                  let progressBar = activeSlide.querySelector('.progress-bar');
+                  if (progressBar) {
+                    progressBar.style.width = `${(1 - progress) * 100}%`;
+                  }
+                }
+              },
+              slideChangeTransitionStart(s) {
+                s.slides.forEach(slide => {
+                  let bar = slide.querySelector('.progress-bar');
+                  if (bar) bar.style.width = "0%";
+                });
+              }
+            }
         });
 
         var swiperbig = new Swiper(".mySwiperbig", {
             loop: true,
-            spaceBetween: 10,
+            freeMode: true,
+            watchSlidesProgress: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
             navigation: {
                 nextEl: ".swiper-button-next-big",
                 prevEl: ".swiper-button-prev-big",
