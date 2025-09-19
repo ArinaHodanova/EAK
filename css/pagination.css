@@ -1,0 +1,124 @@
+.bx-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.bx-pagination-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    text-decoration: none;
+    color: #484544;
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bx-pagination-item:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+    color: #484544;
+}
+
+.bx-pagination-item.bx-active {
+    color: #fff;
+    background: #2E7B6A;
+}
+
+.bx-pagination-item.bx-active:hover {
+    background-color: #3a8174;
+    border-color: #3a8174;
+}
+
+.bx-pagination-item.bx-pagination-prev,
+.bx-pagination-item.bx-pagination-next {
+    width: 56px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border-radius: 60px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #2E7B6A
+}
+
+
+.bx-pagination-item.bx-pagination-prev svg,
+.bx-pagination-item.bx-pagination-next svg {
+    width: 24px;
+    height: 11px;
+}
+
+
+.bx-pagination-prev svg path,
+.bx-pagination-next svg path {
+    fill: #2E7B6A;
+}
+
+.bx-pagination-prev:hover,
+.bx-pagination-next:hover {
+    background-color: #2E7B6A;
+    border: 1px solid #2E7B6A
+}
+
+.bx-pagination-prev:hover svg path,
+.bx-pagination-next:hover svg path {
+    fill: #fff;
+}
+
+.bx-pagination-item.bx-pagination-prev {
+   margin-right: 10px;
+}
+
+.bx-pagination-item.bx-pagination-next {
+    margin-left: 10px;
+}
+
+.bx-pagination-dots {
+    color:  #484544;
+    font-weight: bold;
+    padding: 0 8px;
+    cursor: default;
+}
+
+@media (max-width: 768px) { 
+    .bx-pagination-item {
+        width: 30px;
+        height: 30px;
+    }
+
+    .bx-pagination-item.bx-pagination-prev,
+    .bx-pagination-item.bx-pagination-next {
+        width: 48px;
+        height: 30px;
+    }
+
+    .bx-pagination-item.bx-pagination-prev svg,
+    .bx-pagination-item.bx-pagination-next svg {
+        width: 18px;
+        height: 10px;
+    }
+    
+    .bx-pagination-item.bx-pagination-prev {
+        margin-right: 5px;
+    }
+
+    .bx-pagination-item.bx-pagination-next {
+        margin-left: 5px;
+    }
+
+    .bx-pagination {
+        gap: 5px;
+    }
+}

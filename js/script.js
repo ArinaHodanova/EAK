@@ -114,13 +114,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeSliders() {
         var swiperNews = new Swiper(".mySwiperNews", {
             slidesPerView: 3,
+            spaceBetween: 10,
             grid: {
                 rows: 2,
             },
-            spaceBetween: 30,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 4,
+                },
             },
         });
 
@@ -133,6 +141,14 @@ document.addEventListener('DOMContentLoaded', function() {
             autoplay: {
                 delay: 4000,
                 disableOnInteraction: false,
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 4,
+                },
             },
             on: {
                 autoplayTimeLeft(s, time, progress) {

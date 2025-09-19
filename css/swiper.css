@@ -1,0 +1,66 @@
+.swiper.mySwiperNews {
+    padding-top: 96px;
+    position: relative;
+}
+
+.swiper-button-next.swiper-button-next-big,
+.swiper-button-prev.swiper-button-prev-big  {
+    top: unset;
+    bottom: 30px;
+}
+
+.swiper-button-next.swiper-button-next-big {
+    left: 55px;
+}
+
+.swiper-button-prev.swiper-button-prev-big {
+    left: 0;
+}
+
+.mySwiperNews .swiper-button-next,
+.mySwiperNews .swiper-button-prev {
+    position: absolute;
+    top: 23px;
+    border: 1px solid #2E7B6A;
+    border-radius: 60px;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 56px;
+    height: 44px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+   display: none;
+}
+
+.mySwiperbig .swiper-button-next, 
+.mySwiperbig .swiper-button-prev {
+    height: 14px;
+    width: 30px;
+}
+
+.mySwiperNews .swiper-button-next:hover,
+.mySwiperNews .swiper-button-prev:hover {
+    background: #2E7B6A; 
+}
+
+.mySwiperNews .swiper-button-next:hover svg path,
+.mySwiperNews .swiper-button-prev:hover svg path {
+    fill: #fff;
+}
+
+.mySwiperNews .swiper-button-next svg path,
+.mySwiperNews .swiper-button-prev svg path {
+    fill: #2E7B6A;
+}
+
+.mySwiperNews .swiper-button-next:after, 
+.mySwiperNews .swiper-button-prev:after {
+   display: none;
+}
+
+.mySwiperNews .swiper-button-prev {
+    left: unset;
+    right: 80px; 
+}
