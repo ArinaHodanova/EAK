@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Функция для инициализации всех слайдеров
+    // Инициализация слайдеров
     function initializeSliders() {
         var swiperNews = new Swiper(".mySwiperNews", {
             slidesPerView: 3,
@@ -135,25 +135,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 disableOnInteraction: false,
             },
             on: {
-              autoplayTimeLeft(s, time, progress) {
-                document.querySelectorAll('.progress-bar').forEach(el => {
-                  el.style.width = "0%";
-                });
-
-                let activeSlide = s.el.querySelector('.swiper-slide-thumb-active');
-                if (activeSlide) {
-                  let progressBar = activeSlide.querySelector('.progress-bar');
-                  if (progressBar) {
-                    progressBar.style.width = `${(1 - progress) * 100}%`;
-                  }
+                autoplayTimeLeft(s, time, progress) {
+                    s.slides.forEach(slide => {
+                        let bar = slide.querySelector('.progress-bar');
+                        if (bar) {
+                            bar.style.width = "0%";
+                        }
+                    });
+            
+                    let activeSlide = s.el.querySelector('.swiper-slide-thumb-active');
+                    if (activeSlide) {
+                        let progressBar = activeSlide.querySelector('.progress-bar');
+                        if (progressBar) {
+                            const newWidth = `${(1 - progress) * 100}%`;
+                            progressBar.style.width = newWidth;
+                        }
+                    }
+                },
+                slideChangeTransitionStart(s) {
+                    s.autoplay.stop();
+            
+                    s.slides.forEach(slide => {
+                        let bar = slide.querySelector('.progress-bar');
+                        if (bar) {
+                            bar.style.width = "0%";
+                            bar.style.transition = 'none';
+                        }
+                    });
+                },
+                slideChangeTransitionEnd(s) {
+                    setTimeout(() => {
+                        s.slides.forEach(slide => {
+                            let bar = slide.querySelector('.progress-bar');
+                            if (bar) {
+                                bar.style.transition = '';
+                            }
+                        });
+                
+                        s.autoplay.start();
+                    }, 50);
                 }
-              },
-              slideChangeTransitionStart(s) {
-                s.slides.forEach(slide => {
-                  let bar = slide.querySelector('.progress-bar');
-                  if (bar) bar.style.width = "0%";
-                });
-              }
             }
         });
 
@@ -161,17 +182,13 @@ document.addEventListener('DOMContentLoaded', function() {
             loop: true,
             freeMode: true,
             watchSlidesProgress: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
             navigation: {
                 nextEl: ".swiper-button-next-big",
                 prevEl: ".swiper-button-prev-big",
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
             },
             thumbs: {
                 swiper: swiperpag,
@@ -180,13 +197,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 init: function() {
                     updateMainBgFromActiveSlide();
                 },
-                slideChange: function() {
+                slideChange: function(s) {
                     updateMainBgFromActiveSlide();
+
+                    if (swiperpag && swiperpag.autoplay) {
+                        swiperpag.autoplay.stop();
+                
+                        swiperpag.slides.forEach(slide => {
+                            let bar = slide.querySelector('.progress-bar');
+                            if (bar) {
+                                bar.style.width = "0%";
+                                bar.style.transition = 'none';
+                            }
+                        });
+                
+                        setTimeout(() => {
+                            swiperpag.slides.forEach(slide => {
+                                let bar = slide.querySelector('.progress-bar');
+                                if (bar) {
+                                    bar.style.transition = '';
+                                }
+                            });
+                            swiperpag.autoplay.start();
+                        }, 50);
+                    }
                 }
             }
+
         });
 
-        // Возвращаем объекты слайдеров для возможного дальнейшего использования
         return {
             news: swiperNews,
             pagination: swiperpag,
