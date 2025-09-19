@@ -122,14 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-            breakpoints: {
-                576: {
-                    slidesPerView: 2,
-                },
-                992: {
-                    slidesPerView: 4,
-                },
-            },
         });
 
         var swiperpag = new Swiper(".mySwiperPag", {
