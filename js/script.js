@@ -294,11 +294,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdownTriggers = document.querySelectorAll('.nav__link--mob-dropdown');
 
     if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('hide-scroll');
-        });
+    // Для десктопа
+    menuBtn.addEventListener('click', toggleMenu);
+    // Для мобильных устройств
+    menuBtn.addEventListener('touchend', toggleMenu);
+    
+    function toggleMenu(e) {
+        e.preventDefault();
+        menuBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.classList.toggle('over');
+    }
     }
 
     dropdownTriggers.forEach(trigger => {
