@@ -124,6 +124,30 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         });
 
+        var swiperNew = new Swiper(".mySwiperNew", {
+            slidesPerView: 4,
+            spaceBetween: 50,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 10,
+                },
+                576: {
+                    slidesPerView: 2.3,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 3.3,
+                    spaceBetween: 20,
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 50,
+                },
+            }
+        });
+
+
         var swiperpag = new Swiper(".mySwiperPag", {
             loop: true,
             spaceBetween: 10,
@@ -131,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
             freeMode: true,
             watchSlidesProgress: true,
             autoplay: {
-                delay: 4000,
+                delay: 40000,
                 disableOnInteraction: false,
             },
             breakpoints: {
@@ -195,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 prevEl: ".swiper-button-prev-big",
             },
             autoplay: {
-                delay: 4000,
+                delay: 40000,
                 disableOnInteraction: false,
             },
             thumbs: {
@@ -236,6 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return {
             news: swiperNews,
+            new: swiperNew,
             pagination: swiperpag,
             main: swiperbig
         };
@@ -261,4 +286,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
   
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('[data-menu-toggle]');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
+    const dropdownTriggers = document.querySelectorAll('.nav__link--mob-dropdown');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('hide-scroll');
+        });
+    }
+
+    dropdownTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Находим соответствующий dropdown
+            const dropdown = this.nextElementSibling;
+            
+            // Переключаем класс active у trigger
+            this.classList.toggle('active');
+            
+            // Переключаем класс active у dropdown
+            if (dropdown && dropdown.classList.contains('mob-dropdown')) {
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
 });

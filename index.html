@@ -49,7 +49,7 @@
                             </svg>
 						    <span class="text">Личный кабинет</span>
 					    </a>
-                        <button class=""></button>
+                        <button class="header__menu-btn" type="button" data-menu-toggle></button>
                     </div>
                 </div>
 
@@ -100,6 +100,78 @@
                 </nav>
             </div>
 		</header>
+
+        <div class="mobile-menu" data-mobile-menu>
+                <div class="mobile-menu__row">
+                    <div class="mobile-menu__top">
+                        <nav class="mobile-menu__nav">
+                            <ul class="mobile-menu__list">
+                                <li class="mobile-menu__item">
+                                    <span  class="nav__link--mob-dropdown"><a href="#">Об ассоциации</a></span>
+                                    <div class="mob-dropdown">
+                                        <ul class="mob-dropdown__list">
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">История ассоциации</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Документы</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Структура</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Руководство</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Реквизиты</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mobile-menu__item">
+                                    <span class="nav__link--mob-dropdown"><a href="#">Членство</a></span>
+                                    <div class="mob-dropdown">
+                                        <ul class="mob-dropdown__list">
+                                            <li class="mob-dropdown__item">
+                                            <a href="#" class="mob-dropdown__link">История ассоциации</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Документы</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Структура</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mobile-menu__item"><a href="#">Новости</a></li>
+                                <li class="mobile-menu__item"><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__contacts">
+                            <a href="tel:+74952925234" class="contacts__phone">+8 (495) 292-52-34</a>
+                            <a href="mailto:info@eacpp.org" class="contacts__email">info@eacpp.org</a>
+                        </div>
+
+                        <div class="social">
+                            <a href="#" class="social__link" title="RSS"><img src="img/rutube.svg"></a>
+                            <a href="#" class="social__link social__link--telegram" title="Telegram"><img src="img/tg.svg"></a>
+                            <a href="#" class="social__link social__link--vk" title="VK"><img src="img/wk.svg"></a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-menu__bottom">
+                        <div class="container">
+                            <div class="mobile-menu__bottom-inner">
+                                <p class="title">Вы вошли как:</p>
+                                <p class="lk-name">Сычев Дмитрий Алексеевич</p>
+                                <button type="button" class="logout-btn">Выйти</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
 
         <section class="section-main section-main__mt">
             <div class="section-main__bg" style="background-image: url(img/main-bg.webp);"></div>
@@ -238,16 +310,18 @@
                             на Евразийском пространстве. Мы стремимся к созданию безопасной и эффективной системы здравоохранения,
                             обеспечивая качество и надежность лекарственных средств для населения.</p>
                         </div>
+                    </div>
+                    <div class="info-container__r">
+                       <img src="img/info-img.png">
+                    </div>
+                    <div class="info-container__b">
                         <div class="info-container__quote">
                             <h3 class="title">Президент Ассоциации Сычев Дмитрий Алексеевич</h3>
                             <p class="desc">профессор РАН, академик РАН, лауреат Премии Правительства РФ в&nbsp;области науки и&nbsp;техники, заслуженный деятель науки Российской Федерации</p>
                             <p class="info">«Наша цель — создать единое евразийское пространство для обмена знаниями и&nbsp;опытом в&nbsp;области клинической фармакологии, лекарственной безопасности и&nbsp;оценки медицинских технологий. Сегодня это более чем необходимо — это&nbsp;стратегически важно для&nbsp;развития здравоохранения на&nbsp;нашем континенте»</p>
                         </div>
                     </div>
-                    <div class="info-container__r">
-                       <img src="img/info-img.png">
-                    </div>
-                </div>
+                </div> 
             </div>
         </section>
 
@@ -323,7 +397,49 @@
                     </div>
                     <a class="btn btn-outline-primary btn-with-icon-right btn-sm">Все новости</a>
                 </div>
-                <div class="news__list">
+
+                <div class="swiper mySwiperNew">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="news__item"> 
+                                <div class="news__item-bg" style="background-image: url('img/news01.png');">
+                                    <div class="date">13 августа 2025</div>
+                                </div>
+                                <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
+                                <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="news__item"> 
+                                <div class="news__item-bg" style="background-image: url('img/news02.png');">
+                                    <div class="date">13 августа 2025</div>
+                                </div>
+                                <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
+                                <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="news__item"> 
+                                <div class="news__item-bg" style="background-image: url('img/news03.png');">
+                                    <div class="date">13 октябрь 2025</div>
+                                </div>
+                                <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
+                                <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="news__item"> 
+                                <div class="news__item-bg" style="background-image: url('img/news04.png');">
+                                    <div class="date">13 августа 2025</div>
+                                </div>
+                                <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
+                                <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="news__list">
                     <div class="news__item"> 
                         <div class="news__item-bg" style="background-image: url('img/news01.png');">
                             <div class="date">13 августа 2025</div>
@@ -355,8 +471,8 @@
                         <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
                         <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
                     </div>
+                </div> -->
 
-                </div>
             </div>
         </section>
 
