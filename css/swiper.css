@@ -1,4 +1,4 @@
-.swiper.mySwiperNews {
+.swiper.mySwiperPartners {
     padding-top: 96px;
     position: relative;
 }
@@ -17,17 +17,52 @@
     left: 0;
 }
 
-.mySwiperNews .swiper-button-next,
-.mySwiperNews .swiper-button-prev {
+.mySwiperPartners .swiper-button-next,
+.mySwiperPartners .swiper-button-prev {
+    z-index: 100;
     position: absolute;
-    top: 23px;
+    top: 0;
+    transform: translateY(55%);
     border: 1px solid #2E7B6A;
     border-radius: 60px;
     padding: 16px;
     box-sizing: border-box;
     width: 56px;
     height: 44px;
+    cursor: pointer;
 }
+
+.swiper-arrow .swiper-button-next-detail,
+.swiper-arrow .swiper-button-prev-detail {
+    display: flex;
+    border: 1px solid #2E7B6A;
+    border-radius: 60px;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 56px;
+    height: 44px;
+    z-index: 100;
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+.swiper-button-next-detail.swiper-button-disabled, 
+.swiper-button-prev-detail.swiper-button-disabled {
+    opacity: .35;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.swiper-arrow .swiper-button-next-detail {
+    order: 2;
+}
+
+.swiper-arrow .swiper-button-prev-detail {
+    order: 1;
+}
+
+.mySwiperPartners .swiper-button-next,
+.mySwiperPartners .swiper-button-prev,
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
@@ -40,27 +75,33 @@
     width: 30px;
 }
 
-.mySwiperNews .swiper-button-next:hover,
-.mySwiperNews .swiper-button-prev:hover {
+.mySwiperPartners .swiper-button-next:hover,
+.mySwiperPartners .swiper-button-prev:hover,
+.swiper-arrow .swiper-button-next-detail:hover,
+.swiper-arrow .swiper-button-prev-detail:hover {
     background: #2E7B6A; 
 }
 
-.mySwiperNews .swiper-button-next:hover svg path,
-.mySwiperNews .swiper-button-prev:hover svg path {
+.mySwiperPartners .swiper-button-next:hover svg path,
+.mySwiperPartners .swiper-button-prev:hover svg path,
+.swiper-arrow .swiper-button-next-detail:hover svg path,
+.swiper-arrow .swiper-button-prev-detail:hover svg path {
     fill: #fff;
 }
 
-.mySwiperNews .swiper-button-next svg path,
-.mySwiperNews .swiper-button-prev svg path {
+.mySwiperPartners .swiper-button-next svg path,
+.mySwiperPartners .swiper-button-prev svg path,
+.swiper-arrow .swiper-button-next-detail svg path,
+.swiper-arrow .swiper-button-prev-detail svg path {
     fill: #2E7B6A;
 }
 
-.mySwiperNews .swiper-button-next:after, 
-.mySwiperNews .swiper-button-prev:after {
+.mySwiperPartners .swiper-button-next:after, 
+.mySwiperPartners .swiper-button-prev:after {
    display: none;
 }
 
-.mySwiperNews .swiper-button-prev {
+.mySwiperPartners .swiper-button-prev {
     left: unset;
     right: 80px; 
 }

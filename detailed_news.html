@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Евразийская Ассоциация Клинической Фармакологии и Фармаконадзора</title>
+        <link rel="stylesheet" href="css/pagination.css">
+        <link rel="stylesheet" href="css/swiper.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="css/breadcrumb.css">
+        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	</head>
+
+	<body>
+		<header class="header">
+            <div class="header__container container">
+
+                <div class="header__logo">
+                    <a href="./index.html" class="logo">
+                        <div class="logo__icon"><img src="img/logo.svg"></div>
+                        <p class="logo__text">Евразийская Ассоциация<br>Клинической Фармакологии<br>и Фармаконадзора</p>
+                    </a>
+                </div>
+
+                <div class="header__top-right">
+                    <div class="header__contacts">
+                        <a href="tel:+74952925234" class="contacts__phone">+8 (495) 292-52-34</a>
+                        <a href="mailto:info@eacpp.org" class="contacts__email">info@eacpp.org</a>
+                    </div>
+
+                    <div class="header__actions">
+                        <div class="social">
+                            <a href="#" class="social__link" title="RSS"><img src="img/rutube.svg"></a>
+                            <a href="#" class="social__link social__link--telegram" title="Telegram"><img src="img/tg.svg"></a>
+                            <a href="#" class="social__link social__link--vk" title="VK"><img src="img/wk.svg"></a>
+                        </div>
+                        <a href="/cabinet" class="personal-cabinet">
+                            <svg class="personal-cabinet-desk" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="19" cy="19" r="19" fill="white"/>
+                                <circle cx="19" cy="14" r="4" fill="#2E7B6A"/>
+                                <path d="M27 23.5C27 25.9853 27 28 19 28C11 28 11 25.9853 11 23.5C11 21.0147 14.5817 19 19 19C23.4183 19 27 21.0147 27 23.5Z" fill="#2E7B6A"/>
+                            </svg>
+                            <svg class="personal-cabinet-mobi" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="16" cy="16" r="16" fill="#2E7B6A"/>
+                                <circle cx="16" cy="11.7898" r="3.36842" fill="white"/>
+                                <path d="M22.7367 19.7895C22.7367 21.8823 22.7367 23.5789 15.9999 23.5789C9.26306 23.5789 9.26306 21.8823 9.26306 19.7895C9.26306 17.6966 12.2792 16 15.9999 16C19.7206 16 22.7367 17.6966 22.7367 19.7895Z" fill="white"/>
+                            </svg>
+						    <span class="text">Личный кабинет</span>
+					    </a>
+                        <button class="header__menu-btn" type="button" data-menu-toggle></button>
+                    </div>
+                </div>
+
+                <nav class="header__nav">
+                    <ul class="nav">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--dropdown">ОБ АССОЦИАЦИИ</a>
+                            <div class="dropdown">
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__item">
+                                        <a href="#" class="dropdown__link">История ассоциации</a>
+                                    </li>
+                                    <li class="dropdown__item">
+                                        <a href="#" class="dropdown__link">Документы</a>
+                                    </li>
+                                    <li class="dropdown__item">
+                                        <a href="#" class="dropdown__link">Структура</a>
+                                    </li>
+                                    <li class="dropdown__item">
+                                        <a href="#" class="dropdown__link">Руководство</a>
+                                    </li>
+                                    <li class="dropdown__item">
+                                        <a href="#" class="dropdown__link">Реквизиты</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--dropdown">ЧЛЕНСТВО</a>
+                            <div class="dropdown">
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__item">
+                                        <a href="#" class="dropdown__link">История ассоциации</a>
+                                    </li>
+                                    <li class="dropdown__item">
+                                        <a href="#" class="dropdown__link">Документы</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="./news.html" class="nav__link">НОВОСТИ</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+
+        <div class="mobile-menu" data-mobile-menu>
+                <div class="mobile-menu__row">
+                    <div class="mobile-menu__top">
+                        <nav class="mobile-menu__nav">
+                            <ul class="mobile-menu__list">
+                                <li class="mobile-menu__item">
+                                    <span  class="nav__link--mob-dropdown"><a href="#">Об ассоциации</a></span>
+                                    <div class="mob-dropdown">
+                                        <ul class="mob-dropdown__list">
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">История ассоциации</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Документы</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Структура</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Руководство</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Реквизиты</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mobile-menu__item">
+                                    <span class="nav__link--mob-dropdown"><a href="#">Членство</a></span>
+                                    <div class="mob-dropdown">
+                                        <ul class="mob-dropdown__list">
+                                            <li class="mob-dropdown__item">
+                                            <a href="#" class="mob-dropdown__link">История ассоциации</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Документы</a>
+                                            </li>
+                                            <li class="mob-dropdown__item">
+                                                <a href="#" class="mob-dropdown__link">Структура</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mobile-menu__item"><a href="#">Новости</a></li>
+                                <li class="mobile-menu__item"><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="header__contacts">
+                            <a href="tel:+74952925234" class="contacts__phone">+8 (495) 292-52-34</a>
+                            <a href="mailto:info@eacpp.org" class="contacts__email">info@eacpp.org</a>
+                        </div>
+
+                        <div class="social">
+                            <a href="#" class="social__link" title="RSS"><img src="img/rutube.svg"></a>
+                            <a href="#" class="social__link social__link--telegram" title="Telegram"><img src="img/tg.svg"></a>
+                            <a href="#" class="social__link social__link--vk" title="VK"><img src="img/wk.svg"></a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-menu__bottom">
+                        <div class="container">
+                            <div class="mobile-menu__bottom-inner">
+                                <p class="title">Вы вошли как:</p>
+                                <p class="lk-name">Сычев Дмитрий Алексеевич</p>
+                                <button type="button" class="logout-btn">Выйти</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="main section-main__mt">
+
+            <div class="breadcrumb">
+                <div class="container">
+                    <nav class="bx-breadcrumb" aria-label="Хлебные крошки">
+                        <div class="bx-breadcrumb-item"><a href="/">Главная</a></div>
+                        <div class="bx-breadcrumb-separator"></div>
+                        <div class="bx-breadcrumb-item"><a href="news.html">Новости</a></div>
+                        <div class="bx-breadcrumb-separator"></div>
+                        <div class="bx-breadcrumb-item"><span>Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</span></div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="content-area">
+                    <aside class="sidebar">
+                        <button type="button" class="btn btn-outline-primary btn-with-icon-left btn-sm">Назад к новостям</button>
+                        <div class="sidebar-share">
+                            <p class="sidebar-share__title">Поделиться:</p>
+                            <div class="share">
+                                <a href="#" class="social__link social__link--telegram" title="Telegram"><img src="img/tg.svg"></a>
+                                <a href="#" class="social__link social__link--vk" title="VK"><img src="img/wk.svg"></a>
+                                <a href="#" class="social__link social__link--vk" title="VK"><img src="img/whatsapp.svg"></a>
+                            </div>
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </aside>
+                    <div class="content">
+                        <section class="page-detail-news">
+                            <div class="date">13 августа 2025</div>
+                            <h1 class="title-h1">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</h1>
+                            <div class="img">
+                                <img src="img/detail-news-bg.png">
+                            </div>
+                            <div class="text">
+                                <p class="title-h3">О Евразийской Ассоциации клинической фармакологии и фармаконадзора (ЕАКФФ)</p>
+                                <p>Миссия Ассоциации — содействие развитию клинической фармакологии, фармаконадзора 
+                                    и оценки медицинских технологий на Евразийском пространстве. Мы стремимся к формированию 
+                                    научно обоснованных подходов к безопасному и эффективному применению лекарственных препаратов, 
+                                    улучшению качества медицинской помощи и обеспечению здоровья пациентов.</p>
+                                <p class="title-h3">Основные направления деятельности</p>
+                                <ul>
+                                    <li><strong>Образование и наука: </strong>разработка образовательных программ и поддержка научных исследований.</li>
+                                    <li><strong>Профессиональное развитие: </strong>повышение квалификации специалистов и участие в различный проектах.</li>
+                                    <li><strong>Международное сотрудничество: </strong>обмен опытом с ведущими организациями и странами.</li>
+                                    <li><strong>Социальная значимость: </strong>повышение уровня безопасного и эффективного использования лекарственных средств на территории ЕАЭС..</li>
+                                </ul>
+                                <p class="title-h3">История Ассоциации</p>
+                                <p>Ассоциация была основана летом 2025 года, что стало результатом многолетней работы 
+                                    и стремления к созданию единого профессионального сообщества. Это решение давно созревало, 
+                                    поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость 
+                                    в координации усилий специалистов на евразийском пространстве.</p>
+                                <p>Президентом Ассоциации стал Сычев Дмитрий Алексеевич, профессор РАН, академик РАН, 
+                                    лауреат Премии Правительства РФ в области науки и техники, заслуженный 
+                                    деятель науки Российской Федерации.</p>
+                                <p>«Наша цель — создать единое евразийское пространство для обмена знаниями и опытом 
+                                    в области клинической фармакологии, лекарственной безопасности и оценки медицинских 
+                                    технологий. Сегодня это более чем необходимо — это стратегически важно 
+                                    для развития здравоохранения на нашем континенте».</p>
+                            </div>
+                            <div class="gallery-list">
+                                <a href="img/news01.png" data-fancybox="gallery" data-caption="Caption #1" class="gallery-item">
+	                                <img src="img/news01.png" alt="" />
+                                </a>
+                                <a href="img/news08.jpg" data-fancybox="gallery" data-caption="Caption #1" class="gallery-item">
+	                                <img src="img/news08.jpg" alt="" />
+                                </a>
+                                <a href="img/news06.jpg" data-fancybox="gallery" data-caption="Caption #1" class="gallery-item">
+	                                <img src="img/news06.jpg" alt="" />
+                                </a>
+                                <a href="img/news03.png" data-fancybox="gallery" data-caption="Caption #1" class="gallery-item">
+	                                <img src="img/news03.png" alt="" />
+                                </a>
+                                <a href="img/news04.png" data-fancybox="gallery" data-caption="Caption #1" class="gallery-item">
+	                                <img src="img/news04.png" alt="" />
+                                </a>
+                                <a href="img/detail-news-bg.png" data-fancybox="gallery" data-caption="Caption #1" class="gallery-item">
+	                                <img src="img/detail-news-bg.png" alt="" />
+                                </a>
+                                <a href="img/news02.png" data-fancybox="gallery" data-caption="Caption #1" class="gallery-item">
+	                                <img src="img/news02.png" alt="" />
+                                </a>
+                                <a href="img/news07.jpg" data-fancybox="gallery" data-caption="Caption #1" class="gallery-item">
+	                                <img src="img/news07.jpg" alt="" />
+                                </a>
+                            </div>
+                        </section>      
+                    </div>
+                </div>
+            </div>
+            
+            <section class="news" style="background-image: url('img/security-bg.webp');">
+                <div class="container">
+                    <div class="title__block">
+                        <div class="container-header">
+                            <img src="img/security-features-img03.svg">
+                            <h2 class="title-h2">Другие новости</h2>
+                        </div>
+
+                        <div class="swiper-arrow">
+                            <div class="swiper-button-next-detail">
+                                <svg width="24" height="11" viewBox="0 0 24 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.448 6.20712L17.872 10.0001L18.8147 11L24 5.5L18.8147 -8.22415e-07L17.872 0.999871L21.448 4.79288L2.09503e-07 4.79288L2.71322e-07 6.20712L21.448 6.20712Z"/>
+                                </svg>
+                            </div>
+                            <div class="swiper-button-prev-detail">
+                                <svg width="24" height="11" viewBox="0 0 24 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.552 6.20712L6.128 10.0001L5.18533 11L-2.40413e-07 5.5L5.18533 -8.22415e-07L6.128 0.999871L2.552 4.79288L24 4.79288L24 6.20712L2.552 6.20712Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="swiper mySwiperNewDetail">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="news__item"> 
+                                    <div class="news__item-bg" style="background-image: url('img/news01.png');">
+                                        <div class="date">13 августа 2025</div>
+                                    </div>
+                                    <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
+                                    <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="news__item"> 
+                                    <div class="news__item-bg" style="background-image: url('img/news02.png');">
+                                    <div class="date">13 августа 2025</div>
+                                    </div>
+                                    <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
+                                    <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="news__item"> 
+                                    <div class="news__item-bg" style="background-image: url('img/news03.png');">
+                                        <div class="date">13 октябрь 2025</div>
+                                    </div>
+                                    <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
+                                    <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="news__item"> 
+                                    <div class="news__item-bg" style="background-image: url('img/news04.png');">
+                                        <div class="date">13 августа 2025</div>
+                                    </div>
+                                    <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
+                                    <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="news__item"> 
+                                    <div class="news__item-bg" style="background-image: url('img/news02.png');">
+                                        <div class="date">13 августа 2025</div>
+                                    </div>
+                                    <a href="#" class="news__item-title">Ассоциация была основана летом 2025 года, что стало результатом многолетней работы</a>
+                                    <p class="news__item-desk">Это решение давно созревало, поскольку в современных условиях развития медицины и фармацевтики возникла острая необходимость...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+    
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__grid">
+                    <div class="footer__column footer__column--logo">
+                        <div class="footer__logo-icon"><img src="img/footer__logo.svg"></div>
+                    </div>
+                
+                    <div class="footer__column footer__column--nav">
+                        <div class="footer__nav-section">
+                            <h3 class="footer__nav-title">ОБ АССОЦИАЦИИ</h3>
+                            <ul class="footer__nav-list">
+                                <li class="footer__nav-item">
+                                    <a href="#" class="footer__nav-link">История ассоциации</a>
+                                </li>
+                                <li class="footer__nav-item">
+                                    <a href="#" class="footer__nav-link">Документы</a>
+                                </li>
+                                <li class="footer__nav-item">
+                                    <a href="#" class="footer__nav-link">Структура</a>
+                                </li>
+                                <li class="footer__nav-item">
+                                    <a href="#" class="footer__nav-link">Руководство</a>
+                                </li>
+                                <li class="footer__nav-item">
+                                    <a href="#" class="footer__nav-link">Реквизиты</a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <div class="footer__nav-section">
+                            <a href="#" class="footer__nav-title">ЧЛЕНСТВО</a>
+                            <a href="#" class="footer__nav-title">НОВОСТИ</a>
+                            <a href="#" class="footer__nav-title">КОНТАКТЫ</a>
+                        </div>
+                    </div>
+                
+                    <div class="footer__column footer__column--contact">
+                        <div class="footer__contact-info">
+                            <div class="footer__address">105005, Москва, ул. Бауманская, д. 6, стр. 2</div>
+                            <a href="tel:+74952925234" class="footer__phone">+8 (495) 292-52-34</a>
+                            <a href="mailto:info@eacpp.org" class="footer__email">info@eacpp.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom-line">
+                <div class="container">
+                    <div class="footer__bottom">
+                        <div class="footer__copyright">© 2025 ЕАКФФ / Все права защищены</div>
+                        <a href="#" class="footer__privacy">Политика конфиденциальности</a>
+                        <div class="footer__developer">
+                            <span>Разработка и&nbsp;поддержка&nbsp;сайта</span>
+                            <img src="img/logo-acroweb.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+	    <script src="js/swiper-bundle.min.js"></script>
+        <script src="js/jquery.fancybox.min.js"></script>
+	    <script src="js/script.js"></script>
+
+	</body>
+</html>

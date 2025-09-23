@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Инициализация слайдеров
     function initializeSliders() {
-        var swiperNews = new Swiper(".mySwiperNews", {
+        var swiperNews = new Swiper(".mySwiperPartners", {
             slidesPerView: 3,
             spaceBetween: 10,
             grid: {
@@ -122,11 +122,59 @@ document.addEventListener('DOMContentLoaded', function() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                    grid: {
+                        rows: 3,
+                    },
+                },
+                786: {
+                    slidesPerView: 2,
+                    grid: {
+                        rows: 2,
+                    },
+                },
+                992: {
+                    slidesPerView: 3,
+                    grid: {
+                        rows: 2,
+                    },
+                }
+            }
         });
 
         var swiperNew = new Swiper(".mySwiperNew", {
             slidesPerView: 4,
             spaceBetween: 50,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 10,
+                },
+                576: {
+                    slidesPerView: 2.3,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 3.3,
+                    spaceBetween: 20,
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 50,
+                },
+            }
+        });
+
+
+        var swiperNew = new Swiper(".mySwiperNewDetail", {
+            slidesPerView: 4,
+            spaceBetween: 50,
+            navigation: {
+                nextEl: ".swiper-button-next-detail",
+                prevEl: ".swiper-button-prev-detail",
+            },
             breakpoints: {
                 320: {
                     slidesPerView: 1.3,
@@ -155,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
             freeMode: true,
             watchSlidesProgress: true,
             autoplay: {
-                delay: 40000,
+                delay: 400000,
                 disableOnInteraction: false,
             },
             breakpoints: {
@@ -219,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 prevEl: ".swiper-button-prev-big",
             },
             autoplay: {
-                delay: 40000,
+                delay: 400000,
                 disableOnInteraction: false,
             },
             thumbs: {
@@ -308,14 +356,11 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdownTriggers.forEach(trigger => {
         trigger.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Находим соответствующий dropdown
+
             const dropdown = this.nextElementSibling;
-            
-            // Переключаем класс active у trigger
+
             this.classList.toggle('active');
-            
-            // Переключаем класс active у dropdown
+
             if (dropdown && dropdown.classList.contains('mob-dropdown')) {
                 dropdown.classList.toggle('active');
             }

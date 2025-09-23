@@ -54,13 +54,11 @@
 @media (max-width: 768px) {
     .bx-breadcrumb {
         font-size: 13px;
-        padding: 10px 0;
+        padding: 0;
+    }
+
+    .breadcrumb {
+        padding: 14px 0 30px 0;
     }
             
-    .bx-breadcrumb-item {
-        max-width: 150px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
 }
