@@ -105,3 +105,11 @@
     left: unset;
     right: 80px; 
 }
+
+.swiper {
+    touch-action: pan-y;
+}
+
+.swiper-slide {
+    touch-action: pan-y;
+}
