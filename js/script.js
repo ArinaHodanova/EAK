@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Инициализация слайдеров
     function initializeSliders() {
-        var swiperNews = new Swiper(".mySwiperPartners", {  
+        var swiperPartners = new Swiper(".mySwiperPartners", {   
             slidesPerView: 3,
             spaceBetween: 10,
             grid: {
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        var swiperNew = new Swiper(".mySwiperNew", { 
+        var swiperNew = new Swiper(".mySwiperNew", {  
             slidesPerView: 4,
             spaceBetween: 50,
             breakpoints: {
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
-        var swiperpag = new Swiper(".mySwiperPag", { 
+        var swiperpag = new Swiper(".mySwiperPag", {  
             loop: true,
             spaceBetween: 10,
             slidesPerView: 4,
@@ -306,10 +306,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         });
 
-        return {
-            partners:  swiperPartners,
+        return {  
+            partners: swiperPartners,
             new: swiperNew,
-            detail: mySwiperNewDetail,
+            detail: swiperDetail,
             pagination: swiperpag,
             main: swiperbig
         };
