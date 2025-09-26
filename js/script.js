@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             dropdownLink.addEventListener('click', function(e) {
-                e.preventDefault();
+                //e.preventDefault();
 
                 dropdownItems.forEach(otherItem => {
                     if (otherItem !== item) {

@@ -61,9 +61,6 @@
     order: 1;
 }
 
-.mySwiperPartners .swiper-button-next,
-.mySwiperPartners .swiper-button-prev,
-
 .swiper-button-next:after,
 .swiper-button-prev:after {
    display: none;
