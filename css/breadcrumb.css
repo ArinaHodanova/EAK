@@ -51,6 +51,13 @@
     font-size: 14px;
 }
 
+
+.bx-breadcrumb.w .bx-breadcrumb-item a,
+.bx-breadcrumb.w .bx-breadcrumb-separator,
+.bx-breadcrumb.w .bx-breadcrumb-item:last-child {
+    color: #fff;
+}
+
 @media (max-width: 768px) {
     .bx-breadcrumb {
         font-size: 13px;

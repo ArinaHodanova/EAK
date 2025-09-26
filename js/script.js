@@ -337,34 +337,167 @@ document.addEventListener('DOMContentLoaded', function() {
   
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const menuBtn = document.querySelector('[data-menu-toggle]');
-    const mobileMenu = document.querySelector('[data-mobile-menu]');
-    const dropdownTriggers = document.querySelectorAll('.nav__link--mob-dropdown');
-
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', toggleMenu);
-        menuBtn.addEventListener('touchend', toggleMenu);
+// 1. Обработка полей ввода - добавление класса active
+function handleInputFields() {
+    const inputFields = document.querySelectorAll('.field-input1 input, .field-input1 textarea');
     
-        function toggleMenu(e) {
-            e.preventDefault();
-            menuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('hide-scroll');
-        }
-    }
-
-    dropdownTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const dropdown = this.nextElementSibling;
-
-            this.classList.toggle('active');
-
-            if (dropdown && dropdown.classList.contains('mob-dropdown')) {
-                dropdown.classList.toggle('active');
+    inputFields.forEach(input => {
+        const fieldContainer = input.closest('.field-input1');
+        
+        // Добавляем класс active при фокусе и вводе текста
+        input.addEventListener('focus', () => {
+            fieldContainer.classList.add('active');
+        });
+        
+        input.addEventListener('input', () => {
+            if (input.value.trim() !== '') {
+                fieldContainer.classList.add('active');
+            } else {
+                fieldContainer.classList.remove('active');
             }
         });
+        
+        // Убираем класс active при потере фокуса, если поле пустое
+        input.addEventListener('blur', () => {
+            if (input.value.trim() === '') {
+                fieldContainer.classList.remove('active');
+            }
+        });
+        
+        // Проверяем начальное состояние поля
+        if (input.value.trim() !== '') {
+            fieldContainer.classList.add('active');
+        }
     });
+}
+
+// 2. Обработка выпадающего списка
+function handleDropdownSelect() {
+    const dropdownSelects = document.querySelectorAll('[data-select]');
+    
+    dropdownSelects.forEach(dropdown => {
+        const button = dropdown.querySelector('.filter-select__button');
+        const options = dropdown.querySelectorAll('.filter-select__option');
+        const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+        const fieldContainer = dropdown.closest('.field-input1');
+        
+        // Функция для обновления состояния активности поля
+        function updateFieldActiveState() {
+            if (fieldContainer) {
+                // Проверяем, есть ли выбранный элемент (не пустое значение в data-selected)
+                const selectedValue = button.getAttribute('data-selected');
+                const isActive = dropdown.classList.contains('filter-select--active');
+                
+                if (isActive || (selectedValue && selectedValue.trim() !== '')) {
+                    fieldContainer.classList.add('active');
+                } else {
+                    fieldContainer.classList.remove('active');
+                }
+            }
+        }
+        
+        // Клик по кнопке - открытие/закрытие dropdown
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Закрываем все другие открытые dropdown
+            document.querySelectorAll('[data-select]').forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('filter-select--active');
+                    // Обновляем состояние других полей
+                    const otherFieldContainer = otherDropdown.closest('.field-input1');
+                    if (otherFieldContainer) {
+                        const otherButton = otherDropdown.querySelector('.filter-select__button');
+                        const otherSelectedValue = otherButton.getAttribute('data-selected');
+                        if (!otherSelectedValue || otherSelectedValue.trim() === '') {
+                            otherFieldContainer.classList.remove('active');
+                        }
+                    }
+                }
+            });
+            
+            // Переключаем состояние текущего dropdown
+            dropdown.classList.toggle('filter-select--active');
+            
+            // Обновляем состояние поля
+            updateFieldActiveState();
+        });
+        
+        // Обработка выбора опции
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                const optionText = option.textContent.trim();
+                const optionValue = option.getAttribute('value');
+                
+                // Обновляем текст и атрибуты кнопки
+                button.textContent = optionText;
+                button.setAttribute('value', optionText);
+                button.setAttribute('data-selected', optionText);
+                
+                // Обновляем скрытый input
+                if (hiddenInput) {
+                    hiddenInput.value = optionValue;
+                }
+                
+                // Закрываем dropdown
+                dropdown.classList.remove('filter-select--active');
+                
+                // Обновляем состояние поля
+                updateFieldActiveState();
+            });
+        });
+        
+        // Проверяем начальное состояние
+        updateFieldActiveState();
+    });
+    
+    // Закрытие dropdown при клике вне его области
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-select]')) {
+            document.querySelectorAll('[data-select]').forEach(dropdown => {
+                dropdown.classList.remove('filter-select--active');
+                
+                // Обновляем состояние поля при закрытии
+                const fieldContainer = dropdown.closest('.field-input1');
+                if (fieldContainer) {
+                    const button = dropdown.querySelector('.filter-select__button');
+                    const selectedValue = button.getAttribute('data-selected');
+                    if (!selectedValue || selectedValue.trim() === '') {
+                        fieldContainer.classList.remove('active');
+                    }
+                }
+            });
+        }
+    });
+    
+    // Закрытие dropdown при нажатии Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('[data-select]').forEach(dropdown => {
+                dropdown.classList.remove('filter-select--active');
+                
+                // Обновляем состояние поля при закрытии
+                const fieldContainer = dropdown.closest('.field-input1');
+                if (fieldContainer) {
+                    const button = dropdown.querySelector('.filter-select__button');
+                    const selectedValue = button.getAttribute('data-selected');
+                    if (!selectedValue || selectedValue.trim() === '') {
+                        fieldContainer.classList.remove('active');
+                    }
+                }
+            });
+        }
+    });
+}
+
+// Инициализация после загрузки DOM
+document.addEventListener('DOMContentLoaded', () => {
+    handleInputFields();
+    handleDropdownSelect();
 });
+
+// Если нужно инициализировать для динамически добавленных элементов
+function initializeFormElements() {
+    handleInputFields();
+    handleDropdownSelect();
+}

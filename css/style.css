@@ -1109,6 +1109,10 @@ ul {
     margin-top: 130px;
 }
 
+.section-main__mt.structure {
+    min-height: 540px;
+}
+
 .slider-big__inner {
     padding: 80px 0 0 0;
 }
@@ -1806,6 +1810,197 @@ ul {
     padding-bottom: 50px;
 }
 
+.structure-main {
+    padding-bottom: 150px;
+}
+
+.structure-main .title-h1 {
+    margin: 0;
+    padding: 50px 0 0 0;
+    font-family: var(--font-secondary);
+    color: #fff;
+    font-size: 40px;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+.structure-main .desk {
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    margin: 0;
+    padding: 0 0 40px 0;
+}
+
+
+/*popup*/
+.popup-form {
+    background: #F4F4F4;
+    padding: 80px;
+}
+
+.popup-grid1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.popup-grid1__row_3 {
+    grid-column: span 4;
+}
+
+.popup-grid1__row_2 {
+    grid-column: span 6;
+}
+
+.popup-grid1__row {
+    grid-column: span 12;
+}
+
+.field-input1 {
+    cursor: pointer;
+    position: relative;
+    height: 56px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    color: #1E1E1C;
+    background-color: #fff;
+}
+
+.field-input1.active {
+    border: 1px solid #2E7B6A
+}
+
+.field-input1 label {
+    color: #898585;
+    z-index: 1;
+    left: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    position: absolute;
+}
+
+.field-input1.active label {
+    font-size: 11px;
+    top: 4px;
+}
+
+.field-input1 label span,
+.filter-select-title span {
+    color: #e73f3f;
+    padding: 0 4px;
+}
+
+.field-input1 input,
+.field-input1 textarea {
+    cursor: pointer;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+    border-radius: 10px;
+    bottom: 0;
+    right: 20px;
+    left: 20px;
+    top: 0;
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 9px 0 0 0;
+    width: 100%;
+    border: none;
+}
+
+.field-input1 input:focus-visible, 
+.field-input1 textarea:focus-visible {
+    border-color:  #2E7B6A;
+    border-width: 1px;
+    outline: none;
+    box-shadow: none;
+}
+
+.filter-select {
+    position: relative;
+    width: 100%;
+}
+
+.filter-select__button {
+    font-size: 14px;
+    background-color: #fff !important;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 14px;
+    text-align: left;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    padding: 13px 20px;
+    cursor: pointer;
+}
+
+.filter-select-title {
+    margin: 0;
+    padding: 0 0 12px 0;
+    color: #484544;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.field-input1.active .filter-select__button::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.field-input1 .filter-select__button::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='9' viewBox='0 0 17 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L8.5 8L16 1' stroke='%23484544' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 15px;
+    height: 7px;
+}
+
+.filter-select__dropdown {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    min-width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #2E7B6A;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.filter-select--active .filter-select__dropdown {
+    display: block;
+    overflow: auto;
+    max-height: 300px;
+}
+
+.filter-select__option {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+/*.popup*/
+
 @media (max-width: 1200px) {
     .header__contacts {
         flex-direction: column;
@@ -2315,6 +2510,10 @@ ul {
 
     .partners-block {
         flex-direction: column;
+    }
+
+    .gallery-item {
+        width: 30%;
     }
 }
 
